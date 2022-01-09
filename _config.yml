@@ -104,7 +104,7 @@ cover:
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg
       url: /archives/
-    - name: 源码
+    - name: 关于
       icon: #
       img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg
       url: https://github.com/volantis-x/hexo-theme-volantis/
@@ -395,7 +395,7 @@ sidebar:
     blogger:
       class: blogger
       display: [desktop, mobile] # [desktop, mobile]
-      avatar: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
+      avatar: https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/mybloghp.jpg
       shape: rectangle # circle, rectangle
       url: /about/
       title:
