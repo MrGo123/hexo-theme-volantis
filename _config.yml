@@ -65,6 +65,22 @@ navbar:
     - name: 关于
       icon: fas fa-info-circle
       url: about/
+    - name: 更多
+      icon: fas fa-ellipsis-v
+      rows:
+        - name: 主题源码
+          url: https://github.com/volantis-x/hexo-theme-volantis/
+        - name: 背景音乐
+          icon: fas fa-compact-disc
+        - name: 其他
+          url: /
+        # - name: hr 分割线
+        # - name: 有疑问？ 只有一个name或icon则被渲染为小标题
+        #   rows:
+        #     - name: 看 FAQ
+        #       url: faqs/
+        #     - name: 看 本站源码
+        #       url: https://github.com/volantis-x/volantis-docs/
   search: Search...   # Search bar placeholder
 ############################### Navigation Bar ############################### > end
 
@@ -73,41 +89,26 @@ navbar:
 cover:
   height_scheme: full # full, half
   layout_scheme: dock # blank (留白), search (搜索), dock (坞), featured (精选), focus (焦点)
+  # 是否显示封面
   display:
     home: true
     archive: true
     others: false # can be written in front-matter 'cover: true'
-  background: https://uploadbeta.com/api/pictures/random/?key=BingEverydayWallpaperPicture
-  # background: https://bing.ioliu.cn/v1/rand?w=1920&h=1200
+  background: https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.webp
   logo: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
-  title: 'Volantis'
+  title: 'keep focusing'
   subtitle: ''
-  search: A Wonderful Theme for Hexo # search bar placeholder
+  search: Searching # search bar placeholder
   features:
-    - name: 文档
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f5c3.svg
-      url: /v4/getting-started/
-    - name: 帮助
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f516.svg
-      url: faqs/
-    - name: 示例
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f396.svg
-      url: /examples/
-    - name: 社区
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f389.svg
-      url: /contributors/
-    - name: 博客
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg
+    - name: 博文
+      icon: fas fa-home
+      img: # https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg
       url: /archives/
     - name: 关于
-      icon: #
-      img: https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg
-      url: https://github.com/volantis-x/hexo-theme-volantis/
+      icon: fas fa-info-circle
+      img: # https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg
+      url: /about/
+
 ############################### Cover ############################### > end
 
 pages:
@@ -185,7 +186,7 @@ article:
       # https://volantis.js.org/advanced-settings/#多人协同
       author:
         avatar:
-        name: 请设置文章作者
+        name: Sustart
         url: /
       # 文章创建日期
       date:
@@ -237,7 +238,7 @@ article:
 comments:
   title: <i class='fas fa-comments'></i> 评论
   subtitle:
-  service: giscus # giscus, beaudar, utterances, valine, twikoo, waline, minivaline, disqus, disqusjs, gitalk, vssue, livere, isso, hashover
+  service: gitalk # giscus, beaudar, utterances, valine, twikoo, waline, minivaline, disqus, disqusjs, gitalk, vssue, livere, isso, hashover
   # giscus
   # https://giscus.app
   # https://github.com/laymonage/giscus
@@ -325,12 +326,17 @@ comments:
   # https://gitalk.github.io/
   gitalk:
     # 配置项按照yml格式继续填写即可 除了 [id distractionFreeMode] 选项
-    clientID:
-    clientSecret:
-    repo:
-    owner:
-    admin: # []
-    path: # 全局评论地址
+    clientID: 6a8999d9a4b1cd2bfe92
+    clientSecret: ed2db13d3a8dccae790fdaf41de764d95eee94b3
+    repo: MrGo123.github.io
+    owner: MrGo123
+    admin: MrGo123 # []
+    createIssueManually: true #如果当前页面没有相应的 isssue ，且登录的用户属于 admin，则会自动创建 issue。如果设置为 true，则显示一个初始化页面，创建 issue 需要点击 init 按钮。
+    ID: location.pathname #页面ID，不知道就默认的就好了
+    perPage: 15 #每页多少个评论
+    pagerDirection: last #排序方式是从旧到新（first）还是从新到旧（last）
+    distractionFreeMode: false #是否启用快捷键(cmd|ctrl + enter) 提交评论.
+    # path: # 全局评论地址
   # Vssue 暂不支持Pjax
   # https://vssue.js.org/zh/
   vssue:
@@ -385,7 +391,7 @@ comments:
 sidebar:
   position: right # left right
   # 主页、分类、归档等独立页面
-  for_page: [blogger, category, tagcloud, donate]
+  for_page: [blogger, webinfo, category, tagcloud]
   # layout: docs/post 这类文章页面
   for_post: [toc]
   # 侧边栏组件库
@@ -405,11 +411,11 @@ sidebar:
         - icon: fas fa-rss
           url: /atom.xml
         - icon: fas fa-envelope
-          url: mailto:me@xxx.com
+          url: http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=NE5NWVVdWAIMdFJbTFlVXVgaV1tZ
         - icon: fab fa-github
-          url: https://github.com/volantis-x/
+          url: https://github.com/MrGo123/
         - icon: fas fa-headphones-alt
-          url: /
+          url: https://music.163.com/#/playlist?id=2896521768
     # ---------------------------------------
     # toc widget (valid only in articles)
     toc:
@@ -528,16 +534,24 @@ tag_plugins:
 ############################### Site Footer ############################### > start
 site_footer:
   # layout of footer: [aplayer, social, license, info, copyright]
-  layout: [aplayer, social, license, analytics, info, copyright]
+  layout: [aplayer, social, license, analytics, info, copyright, beian]
   social:
-    - icon: #fas fa-rss
-      url:
-    # or
-    - img:
-      url:
-    # or
-    - avatar:
-      url:
+    - icon: fas fa-rss
+      url: /atom.xml
+    - icon: fas fa-envelope
+      url: http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=NE5NWVVdWAIMdFJbTFlVXVgaV1tZ
+    - icon: fab fa-github
+      url: https://github.com/MrGo123/
+    - icon: fas fa-headphones-alt
+      url: https://music.163.com/#/playlist?id=2896521768
+    # - icon: #fas fa-rss
+    #   url:
+    # # or
+    # - img:
+    #   url:
+    # # or
+    # - avatar:
+    #   url:
   # site source
   source: https://github.com/volantis-x/volantis-docs/
   # analytics using leancloud
@@ -545,9 +559,9 @@ site_footer:
     <span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span>
     <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span>
   # site copyright
-  copyright: '[Copyright © 2017-2020 XXX](/)'
+  copyright: '[Copyright © 2019-2022 Sustart He](/)'
   # You can add your own property here. (Support markdown, for example: br: '<br>')
-  br: '<br>'
+  beian: '[桂ICP备2021001128号](https://beian.miit.gov.cn/)'
 ############################### Site Footer ############################### > end
 
 ############################### Plugins ############################### > start
@@ -647,17 +661,12 @@ plugins:
 
   # 视差滚动效果 Slide Background
   parallax:
-    enable: #true
+    enable: false
     position: cover       # cover: sticky on the cover.   fixed: Fixed as background for the site.
     shuffle: true         # shuffle playlist
     duration: 10000       # Duration (ms)
     fade: 1500            # fade duration (ms) (Not more than 1500)
     images:               # For personal use only. At your own risk if used for commercial purposes !!!
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.webp
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.webp
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.webp
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.webp
-      - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.webp
       - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.webp
       - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.webp
       - https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.webp
@@ -678,18 +687,18 @@ plugins:
   # APlayer is only available in mainland China.
   # APlayer config: https://github.com/metowolf/MetingJS
   aplayer:
-    enable: #true
+    enable: true
     js:
       aplayer: https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/js/APlayer.mini.js # aplayer@1.10 魔改: 将触摸和滚轮事件监听器标记为 `passive`，以提高页面的滚动性能
       meting: https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js
     # Required
     server: netease   # netease, tencent, kugou, xiami, baidu
     type: playlist    # song, playlist, album, search, artist
-    id: 3175833810    # song id / playlist id / album id / search keyword
+    id: 2896521768    # song id / playlist id / album id / search keyword
     # Optional
     fixed: false      # enable fixed mode
     theme: '#1BCDFC'  # main color
-    autoplay: false   # audio autoplay
+    autoplay: true   # audio autoplay
     order: list       # player play order, values: 'list', 'random'
     loop: all         # player loop play, values: 'all', 'one', 'none'
     volume: 0.7       # default volume, notice that player will remember user setting, default volume will not work after user set volume themselves
@@ -846,7 +855,7 @@ plugins:
 ############################### Rightmenu ############################### > start
 # 自定义右键菜单
 rightmenu:
-  enable: true
+  enable: false
   faicon: fa              # 公共图标类型 fa fal fas fad
   # hr: 分割线, music: 音乐控制器
   layout: [home, hr, help, examples, contributors, hr, source_docs, source_theme, hr, print, darkmode, reading, music]
