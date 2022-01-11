@@ -43,12 +43,12 @@ scroll_smooth: true
 navbar:
   visiable: auto # always, auto
   logo: # choose [img] or [icon + title]
-    img: https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png
-    icon:
-    title:
+    img: https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/mylogo.png
+    icon: # fas fa-home
+    title: # 首页
   menu:
-    - name: 博客
-      icon: fas fa-rss
+    - name: 博文
+      icon: fas fa-blog
       url: /
     - name: 分类
       icon: fas fa-folder-open
@@ -65,15 +65,13 @@ navbar:
     - name: 关于
       icon: fas fa-info-circle
       url: about/
-    - name: 更多
+    - name: 其他
       icon: fas fa-ellipsis-v
       rows:
-        - name: 主题源码
-          url: https://github.com/volantis-x/hexo-theme-volantis/
-        - name: 背景音乐
-          icon: fas fa-compact-disc
-        - name: 其他
-          url: /
+        # - name: 博客事记
+        #   url: /
+        # - name: 其他
+        #   url: /
         # - name: hr 分割线
         # - name: 有疑问？ 只有一个name或icon则被渲染为小标题
         #   rows:
@@ -87,7 +85,7 @@ navbar:
 
 ############################### Cover ############################### > start
 cover:
-  height_scheme: full # full, half
+  height_scheme: half # full, half
   layout_scheme: dock # blank (留白), search (搜索), dock (坞), featured (精选), focus (焦点)
   # 是否显示封面
   display:
@@ -97,17 +95,17 @@ cover:
   background: https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.webp
   logo: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-Cover@3x.png
   title: 'keep focusing'
-  subtitle: ''
+  subtitle: '--Sustart'
   search: Searching # search bar placeholder
   features:
-    - name: 博文
-      icon: fas fa-home
-      img: # https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg
-      url: /archives/
-    - name: 关于
-      icon: fas fa-info-circle
-      img: # https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg
-      url: /about/
+    # - name: 动态
+    #   icon: fas fa-clock
+    #   img: # https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg
+    #   url: archives/
+    # - name: 关于
+    #   icon: fas fa-info-circle
+    #   img: # https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg
+    #   url: about/
 
 ############################### Cover ############################### > end
 
@@ -129,16 +127,16 @@ article:
     # auto generate excerpt if not exist
     auto_excerpt: true # false, true
     # show split line or not
-    line_style: solid # hidden, solid, dashed, dotted
+    line_style: dashed # hidden, solid, dashed, dotted
     # show author
-    author: false # true, false
+    author: true # true, false
     # show readmore button
     readmore: auto # auto, always
   # 文章详情页面的文章卡片本体布局方案
   body:
     # 文章顶部信息
     # 从 meta_library 中取
-    top_meta: [author, category, date, counter] #启用评论数量需在此添加
+    top_meta: [author, category, date, updated, counter] #启用评论数量需在此添加
     # ----------------
     # 文章页脚组件
     footer_widget:
@@ -179,24 +177,24 @@ article:
           - https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
     # 文章底部信息
     # 从 meta_library 中取
-    bottom_meta: [updated, tags, share]
+    bottom_meta: [tags, share]
     # meta library
     meta_library:
       # 默认文章作者（可在 _data/author.yaml 中增加其他作者，并在 front-matter 中设置）
       # https://volantis.js.org/advanced-settings/#多人协同
       author:
-        avatar:
+        avatar: https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/mybloghp.jpg
         name: Sustart
         url: /
       # 文章创建日期
       date:
         icon: fas fa-calendar-alt
-        title: '发布于：'
+        title: '发布：'
         format: 'll' # 日期格式 http://momentjs.com/docs/
       # 文章更新日期
       updated:
         icon: fas fa-edit
-        title: '更新于：'
+        title: '更新：'
         format: 'll' # 日期格式 http://momentjs.com/docs/
       # 文章分类
       category:
@@ -403,9 +401,9 @@ sidebar:
       display: [desktop, mobile] # [desktop, mobile]
       avatar: https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/mybloghp.jpg
       shape: rectangle # circle, rectangle
-      url: /about/
-      title:
-      subtitle:
+      url: about/
+      title: 
+      subtitle: 
       jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
       social:
         - icon: fas fa-rss
@@ -432,7 +430,7 @@ sidebar:
     music:
       class: music
       display: [desktop, mobile] # [desktop, mobile]
-      pjaxReload: false
+      pjaxReload: true
     # ---------------------------------------
     # category widget
     category:
@@ -446,13 +444,13 @@ sidebar:
     # tagcloud widget
     tagcloud:
       class: tagcloud
-      display: [desktop, mobile] # [desktop, mobile]
+      display: [desktop] # [desktop, mobile]
       header:
         icon: fas fa-tags
         title: 热门标签
         url: /blog/tags/
       min_font: 14
-      max_font: 24
+      max_font: 20
       color: true
       start_color: '#999'
       end_color: '#555'
@@ -480,15 +478,15 @@ sidebar:
           unit: '篇'
         runtime:
           enable: true
-          data: '2020/01/01'    # 填写建站日期
+          data: '2019/12/31'    # 填写建站日期
           text: '已运行时间：'
           unit: '天'
         wordcount:
-          enable: true
+          enable: false
           text: '本站总字数：'   # 需要启用 wordcount
           unit: '字'
         visitcounter:
-          service: leancloud  # busuanzi, leancloud
+          service: busuanzi  # busuanzi, leancloud
           siteuv:
             enable: true
             text: '本站访客数：'
@@ -576,11 +574,11 @@ plugins:
   ################ optional plugins ################
   # issues api
   sitesjs:
-    enable: true
+    enable: false
   friendsjs:
-    enable: true
+    enable: false
   contributorsjs:
-    enable: true
+    enable: false
 
   ######## Plugins to improve loading speed:
   # 预加载
@@ -640,7 +638,7 @@ plugins:
   ######## Plugins for SEO:
   # npm i hexo-wordcount
   wordcount:
-    enable: #true
+    enable: false #true
 
   ######## Plugins for ...
   # Button Ripple Effect
@@ -740,12 +738,12 @@ plugins:
   # 配置过程请参考：https://artitalk.js.org/doc.html
   # 使用过旧版本的请修改Leancloud shuoshuo class部分列名：https://artitalk.js.org/release.html
   # 除appID和appKEY外均为选填项
-  artitalk:
+  # artitalk:
     # Set `plugins: ["artitalk"]` to enable in front-matter
     # 不支持 Pjax
     # 配置项按照yml格式继续填写即可
-    appId: ogP8qj3veMh0LFpFWMPOyF0X-MdYXbMMI # your appID
-    appKey: nHXLd3N3Jgh460t2iRQKWAtr # your appKEY
+    # appId: ogP8qj3veMh0LFpFWMPOyF0X-MdYXbMMI # your appID
+    # appKey: nHXLd3N3Jgh460t2iRQKWAtr # your appKEY
     # serverURL:  #leancloud绑定的api访问域名，使用国际版的话不需要填写
     # lang: # 语言设置，zh为汉语，en为英语，es为西班牙语。默认为汉语
     # pageSize: #每页说说的显示数量
@@ -759,27 +757,27 @@ plugins:
     # cssUrl: #自定义css接口
 
   # BBtalk https://bb.js.org
-  bbtalk:
-    # Set `plugins: ["bbtalk"]` to enable in front-matter
-    # 不支持 Pjax
-    js: https://cdn.jsdelivr.net/npm/bbtalk@0.1.5/dist/bbtalk.min.js # BBtalk.js
-    appId: 0KzOX4vC7Jsk6vzUGNeEiUaI-gzGzoHsz # your appID
-    appKey: HwCiWuxfpvKiLm4teCUgTIba # your appKEY
-    serverURLs: https://bbapi.heson10.com # Request Api 域名
+  # bbtalk:
+  #   # Set `plugins: ["bbtalk"]` to enable in front-matter
+  #   # 不支持 Pjax
+  #   js: https://cdn.jsdelivr.net/npm/bbtalk@0.1.5/dist/bbtalk.min.js # BBtalk.js
+  #   appId: 0KzOX4vC7Jsk6vzUGNeEiUaI-gzGzoHsz # your appID
+  #   appKey: HwCiWuxfpvKiLm4teCUgTIba # your appKEY
+  #   serverURLs: https://bbapi.heson10.com # Request Api 域名
 
   # HexoPlusPlus
   # https://github.com/HexoPlusPlus/HexoPlusPlus
   # https://hexoplusplus.js.org/
   # 无服务器Hexo后端,支持文章编辑,自带图床功能.目标:解决静态博客所有痛点[文章编辑、图片上传、博主活跃信息统计、博主说说、Twikoo加强版、阅读量统计等
-  hpp:
-    # 说说功能
-    # Set `plugins: ["hpptalk"]` to enable in front-matter
-    # 支持 Pjax
-    hpp_talk:
-      css: https://cdn.jsdelivr.net/gh/HexoPlusPlus/HexoPlusPlus@latest/talk.css # 建议锁定版本
-      js: https://cdn.jsdelivr.net/gh/HexoPlusPlus/HexoPlusPlus@latest/talk_user.js # 建议锁定版本
-      limit: 10
-      start: 0
+  # hpp:
+  #   # 说说功能
+  #   # Set `plugins: ["hpptalk"]` to enable in front-matter
+  #   # 支持 Pjax
+  #   hpp_talk:
+  #     css: https://cdn.jsdelivr.net/gh/HexoPlusPlus/HexoPlusPlus@latest/talk.css # 建议锁定版本
+  #     js: https://cdn.jsdelivr.net/gh/HexoPlusPlus/HexoPlusPlus@latest/talk_user.js # 建议锁定版本
+  #     limit: 10
+  #     start: 0
       # 配置项按照yml格式继续填写即可
       # domain:
       # themecss:
@@ -788,14 +786,14 @@ plugins:
   # 友链朋友圈 hexo-circle-of-friends
   # https://github.com/Rock-Candy-Tea/hexo-circle-of-friends
   # https://zfe.space/post/friend-link-circle.html
-  fcircle:
-    # Set `plugins: ["fcircle"]` to enable in front-matter
-    # 支持 Pjax
-    api: '' # api 地址
-    max_number: 20 # 页面展示文章数量
-    add_number: 10 # 每次加载增加的篇数
-    opentype: '_blank' # '_blank'打开新标签,'_self'本窗口打开
-    nofollow: true # 禁止搜索引擎抓取
+  # fcircle:
+  #   # Set `plugins: ["fcircle"]` to enable in front-matter
+  #   # 支持 Pjax
+  #   api: '' # api 地址
+  #   max_number: 20 # 页面展示文章数量
+  #   add_number: 10 # 每次加载增加的篇数
+  #   opentype: '_blank' # '_blank'打开新标签,'_self'本窗口打开
+  #   nofollow: true # 禁止搜索引擎抓取
     # loadingCutom: # 自定义loading图 例如: <i class="fa fa-spinner fa-spin"></i> | <img src="你的图片地址" alt="加载中...">
 
   # 消息提示
@@ -815,7 +813,7 @@ plugins:
     backgroundColor: 'var(--color-card)' # 默认背景色
     zindex: 2147483647                   # 层级
     copyright:                           # 是否在复制时弹出版权提示，影响范围：ctrl+c、代码块复制按钮、右键复制选项
-      enable: true
+      enable: false
       title: '知识共享许可协议'
       message: '请遵守 CC BY-NC-SA 4.0 协议。'
       icon: 'far fa-copyright light-blue'
@@ -824,7 +822,7 @@ plugins:
       play: fas fa-play
       pause: fas fa-pause
     rightmenu:                            # 是否开启右键模块的消息通知
-      enable: true
+      enable: false
   
   # 标签插件样式按需加载
   # 注意这个配置是带缓存的, 如果修改标签插件样式每次调试需要刷新两次页面, 建议开发者关闭该配置
@@ -1021,7 +1019,7 @@ custom_css:
     size: 4px
     border: 2px
   navbar:
-    height: 64px
+    height: 50px
     width: auto # auto, max
     effect: [shadow, blur] # [shadow, floatable, blur]
   sidebar:
@@ -1084,7 +1082,7 @@ custom_css:
 
 ############################### Analytics ############################### > start
 analytics:
-  busuanzi: #https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
+  busuanzi: https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
   leancloud: # 请使用自己的 id & key 以防止数据丢失
     app_id: # u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI
     app_key: # jfHtEKVE24j0IVCGHbvuFClp
