@@ -71,7 +71,7 @@ navbar:
     - name: 更多
       icon: fas fa-chevron-circle-down
       rows:
-        - name: 关于Sustart
+        - name: 关于博主
           icon: fas fa-info-circle
           url: about/
         - name: 小站事记
