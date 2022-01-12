@@ -41,33 +41,73 @@ scroll_smooth: true
 ############################### Navigation Bar ############################### > start
 # 注意事项：建议规范全站路径 URL 最后带一个 "/" 例如 "about/"
 navbar:
-  visiable: auto # always, auto
+  visiable: always # always, auto
   logo: # choose [img] or [icon + title]
-    img: https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/mylogo.png
+    img: # https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/mylogo.png
     icon: # fas fa-home
-    title: # 首页
+    title: Sustart # 首页
   menu:
     - name: 博文
       icon: fas fa-blog
       url: /
-    - name: 分类
-      icon: fas fa-folder-open
-      url: categories/
-    - name: 标签
-      icon: fas fa-tags
-      url: tags/
-    - name: 归档
-      icon: fas fa-archive
+    - name: 动态
+      icon: fas fa-clock
       url: archives/
-    - name: 友链
-      icon: fas fa-link
-      url: friends/
-    - name: 关于
-      icon: fas fa-info-circle
-      url: about/
-    - name: 其他
-      icon: fas fa-ellipsis-v
+    - name: 留言
+      icon: fas fa-comment-alt
+      url: message/
+    - name: 导航
+      icon: fas fa-chevron-circle-down
       rows:
+        - name: 分类列表
+          icon: fas fa-folder-open
+          url: categories/
+        - name: 文章标签
+          icon: fas fa-tags
+          url: tags/
+        - name: 关注列表
+          icon: fas fa-link
+          url: friends/
+    - name: 更多
+      icon: fas fa-chevron-circle-down
+      rows:
+        - name: 关于Sustart
+          icon: fas fa-info-circle
+          url: about/
+        - name: 小站事记
+          icon: fas fa-edit
+          url: timeline/
+    # - name: Follow Me
+    #   icon: fas fa-chevron-circle-down
+    #   rows:
+    - name: RSS
+      icon: fas fa-rss
+      url: /atom.xml
+        # - name: hr # 分割线
+        # - name: 知乎
+        #   icon: fab fa-zhihu
+        #   url: https://www.zhihu.com/people/mry-15-56
+        # - name: 语雀
+        #   icon: fas fa-clipboard
+        #   url: https://www.yuque.com/sustart
+        # - name: Github
+        #   icon: fab fa-github-square
+        #   url: https://github.com/MrGo123/
+        # - name: Twitter
+        #   icon: fab fa-twitter-square
+        #   url: https://twitter.com/SustartHe
+    # - name: 归档 
+    #   icon: fas fa-archive
+    #   url: archives/
+    # - name: 友链
+    #   icon: fas fa-link
+    #   url: friends/
+    # - name: 关于
+    #   icon: fas fa-info-circle
+    #   url: about/
+    # - name: 其他
+    #   icon: fas fa-ellipsis-v
+    #   rows:
         # - name: 博客事记
         #   url: /
         # - name: 其他
@@ -102,6 +142,9 @@ cover:
     #   icon: fas fa-clock
     #   img: # https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f4f0.svg
     #   url: archives/
+    # - name: 友链
+    #   icon: fas fa-users
+    #   url: friends/
     # - name: 关于
     #   icon: fas fa-info-circle
     #   img: # https://cdn.jsdelivr.net/gh/twitter/twemoji@13.0/assets/svg/1f9ec.svg
@@ -183,7 +226,7 @@ article:
       # 默认文章作者（可在 _data/author.yaml 中增加其他作者，并在 front-matter 中设置）
       # https://volantis.js.org/advanced-settings/#多人协同
       author:
-        avatar: https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/mybloghp.jpg
+        avatar: https://cdn.jsdelivr.net/gh/MrGo123/asset/headPortrait/mybloghp.jpg
         name: Sustart
         url: /
       # 文章创建日期
@@ -235,7 +278,7 @@ article:
 ############################### Comments ############################### > start
 comments:
   title: <i class='fas fa-comments'></i> 评论
-  subtitle:
+  subtitle: "Gitalk评论系统对接至Github Issue，随心评论🐾🐾....."
   service: gitalk # giscus, beaudar, utterances, valine, twikoo, waline, minivaline, disqus, disqusjs, gitalk, vssue, livere, isso, hashover
   # giscus
   # https://giscus.app
@@ -387,11 +430,11 @@ comments:
 
 ############################### Sidebar ############################### > start
 sidebar:
-  position: right # left right
+  position: left # left right
   # 主页、分类、归档等独立页面
   for_page: [blogger, webinfo, category, tagcloud]
   # layout: docs/post 这类文章页面
-  for_post: [toc]
+  for_post: [blogger, category, toc]
   # 侧边栏组件库
   widget_library:
     # ---------------------------------------
@@ -399,21 +442,21 @@ sidebar:
     blogger:
       class: blogger
       display: [desktop, mobile] # [desktop, mobile]
-      avatar: https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/mybloghp.jpg
+      avatar: https://cdn.jsdelivr.net/gh/MrGo123/asset/headPortrait/mybloghp.jpg
       shape: rectangle # circle, rectangle
       url: about/
       title: 
-      subtitle: 
-      jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
+      subtitle: "时光不语，静待花开！"
+      jinrishici: false # Poetry Today. You can set a string, and it will be displayed when loading fails.
       social:
-        - icon: fas fa-rss
-          url: /atom.xml
         - icon: fas fa-envelope
           url: http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=NE5NWVVdWAIMdFJbTFlVXVgaV1tZ
+        - icon: fab fa-zhihu
+          url: https://www.zhihu.com/people/mry-15-56
         - icon: fab fa-github
           url: https://github.com/MrGo123/
-        - icon: fas fa-headphones-alt
-          url: https://music.163.com/#/playlist?id=2896521768
+        - icon: fab fa-twitter-square
+          url: https://twitter.com/SustartHe
     # ---------------------------------------
     # toc widget (valid only in articles)
     toc:
@@ -478,7 +521,7 @@ sidebar:
           unit: '篇'
         runtime:
           enable: true
-          data: '2019/12/31'    # 填写建站日期
+          data: '2019/12/12'    # 填写建站日期
           text: '已运行时间：'
           unit: '天'
         wordcount:
@@ -486,9 +529,9 @@ sidebar:
           text: '本站总字数：'   # 需要启用 wordcount
           unit: '字'
         visitcounter:
-          service: busuanzi  # busuanzi, leancloud
+          service: leancloud  # busuanzi, leancloud
           siteuv:
-            enable: true
+            enable: false
             text: '本站访客数：'
             unit: '人'
           sitepv:
@@ -612,7 +655,7 @@ plugins:
     # css: https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/default.min.css
     # # # more: https://www.jsdelivr.com/package/npm/highlight.js?path=styles
 
-  # prismjs
+  # prismjs 代码高亮
   # https://prismjs.com/
   # https://hexo.io/zh-cn/docs/syntax-highlight#PrismJS
   prismjs:
@@ -692,15 +735,15 @@ plugins:
     # Required
     server: netease   # netease, tencent, kugou, xiami, baidu
     type: playlist    # song, playlist, album, search, artist
-    id: 2896521768    # song id / playlist id / album id / search keyword
+    id: 3778678 # 2896521768    # song id / playlist id / album id / search keyword
     # Optional
     fixed: false      # enable fixed mode
     theme: '#1BCDFC'  # main color
-    autoplay: true   # audio autoplay
-    order: list       # player play order, values: 'list', 'random'
+    autoplay: false   # audio autoplay
+    order: random       # player play order, values: 'list', 'random'
     loop: all         # player loop play, values: 'all', 'one', 'none'
-    volume: 0.7       # default volume, notice that player will remember user setting, default volume will not work after user set volume themselves
-    list_max_height: 320px # list max height
+    volume: 0.2       # default volume, notice that player will remember user setting, default volume will not work after user set volume themselves
+    list_max_height: 180px # list max height
     list_folded: true
 
   # Pjax
@@ -803,7 +846,7 @@ plugins:
       default: fas fa-info-circle light-blue
       quection: fas fa-question-circle light-blue
     time:     # 默认持续时间
-      default: 5000
+      default: 3000
       quection: 20000
     position: 'topRight'                 # 弹出位置 可选值：topRight, bottomRight, bottomLeft, topLeft, topCenter, bottomCenter, center
     transitionIn: 'bounceInLeft'         # 弹窗打开动画 可选值：bounceInLeft, bounceInRight, bounceInUp, bounceInDown, fadeIn, fadeInDown, fadeInUp, fadeInLeft, fadeInRight, flipInX
@@ -1082,10 +1125,10 @@ custom_css:
 
 ############################### Analytics ############################### > start
 analytics:
-  busuanzi: https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
+  busuanzi: # https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
   leancloud: # 请使用自己的 id & key 以防止数据丢失
-    app_id: # u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI
-    app_key: # jfHtEKVE24j0IVCGHbvuFClp
+    app_id: IvlxaVCe7EreCVRWjL8btmEN-gzGzoHsz
+    app_key: PTBT4G1f8AKsSvdAeodaEBjz
     custom_api_server: # 国际版一般不需要写，除非自定义了 API Server
 ############################### Analytics ############################### > end
 

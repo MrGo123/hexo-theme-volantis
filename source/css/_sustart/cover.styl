@@ -1,0 +1,44 @@
+/* 样式覆盖类，参考来源 https://inkss.cn/blog/610620a9/ */
+
+/*  列表页的内容-标题居中 */
+.post.post-v3.white-box
+  text-align: center
+  & a
+    font-weight: 600 !important
+ /* 列表页的内容-内容居左且首行缩进 */
+.post.post-v3.white-box  p
+  text-align: left
+  text-indent: 2em
+
+/* 链接下划线样式 */
+.article a:not([class]):not([data-fancybox]),
+.content > a
+  position: relative
+  text-decoration: none
+  &:before
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px
+    height: 1px
+    width: 100%
+    background: #ff5722
+    transform: scale(0)
+    transition: all 0.5s
+  &:hover:before
+    transform: scale(1)
+
+/* 文章详情页-标题样式 */
+h1.title
+  margin: 10px
+  text-align: center
+  font-size: 2rem !important
+  font-weight: 600
+  font-family: $fontfamily-logo
+h1.title.common_read_h1
+  text-align: center !important
+  font-size: 2.5rem !important
+
+/* 文章详情页-行间距 */
+article p
+  line-height: 2 !important;
